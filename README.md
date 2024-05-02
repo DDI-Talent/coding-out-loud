@@ -1,2 +1,2 @@
-# coding-out-loud
-For Friday sessions for coding out loud
+# Coding-out-Loud
+Friday coding out loud sessions
