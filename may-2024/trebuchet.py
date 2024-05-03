@@ -12,7 +12,7 @@ def load_file_lines(filename):
     file.close()
     return lines
 
-datas = load_file_lines("./data/data.txt")
+data = load_file_lines("./data/data.txt")
 
 def are_you_a_digit(some_character):
     if some_character in digits:
@@ -60,5 +60,4 @@ def sum_of_numbers_in_words(list_of_words):
      
       return sum(list_of_numbers)
 
-print(sum_of_numbers_in_words(datas))
-
+print(sum_of_numbers_in_words(data))
