@@ -22,8 +22,22 @@ def get_last_digit(word):
                 return character
 
 # given a string, return first and last digits combined
+# def get_first_and_last_digits_combined(word):
+#     return int(get_first_digit(word) + get_last_digit(word))
+
 def get_first_and_last_digits_combined(word):
-    return int(get_first_digit(word) + get_last_digit(word))
+    # get all characters, and only return the digit ones
+    just_digits = [
+         letter
+         for letter in word
+         if letter in digits
+	]
+    return int(just_digits[0] + just_digits[-1])
+	# "1" "5"
+    # "15"
+    # 15
+	# grab first and last and num them
+
 
 
 input_strings = ["1abc2", "pqr3stu8vwx", "a1b2c3d4e5f", "treb7uchet"]
@@ -40,6 +54,18 @@ def sum_of_numbers_in_words(list_of_words):
 print(sum_of_numbers_in_words(input_strings))
 
 
+# load the file:
+
+def load_file_lines(filename):
+    lines = []
+    file = open(filename)
+    for line in file:
+        lines.append(line.rstrip("\n"))
+    file.close()
+    return lines
+
+datas = load_file_lines("./pawel.txt")
+print(sum_of_numbers_in_words(datas))
 
 
 
