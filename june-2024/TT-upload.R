@@ -4,7 +4,8 @@ library(tidyverse)
 age_gaps <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-14/age_gaps.csv')
 
 # Step 2: Select the columns we need
-
+age_gaps_selected <- age_gaps %>% 
+  select(actor_1_name, actor_2_name, actor_1_birthdate, actor_2_birthdate)
 # Step 3: Pivot to obtain 2 columns: one with names, one with birth dates
 
 # Step 4: Use the pull() function to get a vector of birth dates 
