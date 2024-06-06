@@ -12,7 +12,7 @@ age_gaps_pivoted <- age_gaps_selected %>%
                names_to = "which_actor",
                values_to = "actor_name") %>% 
   pivot_longer(cols = ends_with("birthdate"),
-               names_to = ("which_actor_date"),
+               names_to = "which_actor_date",
                values_to = "birthdate") %>% 
   filter((which_actor == "actor_1_name" & which_actor_date == "actor_1_birthdate")|
            (which_actor == "actor_2_name" & which_actor_date == "actor_2_birthdate")) %>% 
@@ -34,4 +34,14 @@ age_gaps_pivoted <- age_gaps_selected %>%
 # Step 9: Use the interval function to calculate the interval (in years) between
 # the input vector and the todays_date vector
 
-
+# I tried using Copilot to refactor the code, but it's not come up
+# with anything useful
+age_gaps_pivoted_ai <- age_gaps_selected %>%
+  mutate(across(ends_with("birthdate"), as.character)) %>%  # Convert birthdate to character
+  pivot_longer(cols = starts_with("actor_"),
+               names_to = "which_actor",
+               values_to = "value") %>%
+  separate(which_actor, into = c("actor", "attribute"), sep = "_") %>%
+  pivot_wider(names_from = attribute, values_from = value) %>%
+  mutate(birthdate = as.Date(birthdate)) %>%  # Convert birthdate to date type
+  select(actor_name, birthdate)
