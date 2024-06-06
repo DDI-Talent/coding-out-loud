@@ -7,6 +7,17 @@ age_gaps <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/t
 age_gaps_selected <- age_gaps %>% 
   select(actor_1_name, actor_2_name, actor_1_birthdate, actor_2_birthdate)
 # Step 3: Pivot to obtain 2 columns: one with names, one with birth dates
+age_gaps_pivoted <- age_gaps_selected %>% 
+  pivot_longer(cols = ends_with("name"),
+               names_to = "which_actor",
+               values_to = "actor_name") %>% 
+  pivot_longer(cols = ends_with("birthdate"),
+               names_to = ("which_actor_date"),
+               values_to = "birthdate") %>% 
+  filter((which_actor == "actor_1_name" & which_actor_date == "actor_1_birthdate")|
+           (which_actor == "actor_2_name" & which_actor_date == "actor_2_birthdate")) %>% 
+  select(actor_name, birthdate)
+
 
 # Step 4: Use the pull() function to get a vector of birth dates 
 # (as the task is to write a vector function)
@@ -22,3 +33,5 @@ age_gaps_selected <- age_gaps %>%
 
 # Step 9: Use the interval function to calculate the interval (in years) between
 # the input vector and the todays_date vector
+
+
