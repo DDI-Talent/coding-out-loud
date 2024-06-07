@@ -19,17 +19,17 @@ get_ages <- function(birthdates) {
   # ensure the input is in date format
   birthdates_as_dates <- as.Date(birthdates)
   # store today's date in a variable
-  todays_date <- Sys.Date()
+  todays_date <- now()
   # compare all birthdates to today's date and get the difference in years
-
+  ages <- interval( birthdates_as_dates, todays_date ) / years(1)
   # return a vector of integers  
-  return("a vector of ages") 
+  return( floor(ages) ) 
 }
 
-example_birthdates <- c("2001-02-19", "1995-04-21")
+example_birthdates <- c("2001-02-19", "1995-06-30")
 
 # run, execute, call
-print(get_ages(example_birthdates))
+get_ages(example_birthdates)
 
 
 
