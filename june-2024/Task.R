@@ -13,3 +13,24 @@
 # Step 6: Test the function again
 
 # Step 7: Write the algorithm within the function
+
+get_ages <- function(birthdates) {
+  # do the algorithm
+  
+  return("a vector of ages") 
+}
+
+example_birthdates <- c("2001-02-19", "1995-04-21")
+
+# run, execute, call
+print(get_ages(example_birthdates))
+
+
+
+
+
+
+
+
+
+
