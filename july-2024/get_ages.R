@@ -30,3 +30,20 @@ example_birthdates <- c("2001-02-19", "1995-06-30")
 
 # run, execute, call
 get_ages(example_birthdates)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
