@@ -10,9 +10,9 @@ actor_1s <- age_gaps %>%
 actor_2s <- age_gaps %>%
   select(name = actor_2_name, dob = actor_2_birthdate)
 
-actor_ages <- bind_rows(actor_1s, actor_2s) %>% 
-  mutate(age = get_ages(dob)) %>% 
-  arrange(name) %>% 
+actor_ages <- bind_rows(actor_1s, actor_2s) %>%
+  mutate(age = get_ages(dob)) %>%
+  arrange(name) %>%
   distinct(name, .keep_all = TRUE)
 
 View(actor_ages)
