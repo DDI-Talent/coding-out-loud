@@ -6,7 +6,6 @@
 #
 #    http://shiny.rstudio.com/
 #
-# UI, Server, ShinyApp (ui,server)
 
 library(shiny)
 
@@ -14,52 +13,35 @@ library(shiny)
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Tabsets"),
+    titlePanel("Old Faithful Geyser Data"),
 
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
         sidebarPanel(
-          radioButtons("dist", "Distripution Types:",
-                       c("Normal"="norm",
-                         "Uniform"="unif",
-                         "Log-normal"="lnorm",
-                         "Exponential"="exp")),
-          
-          sliderInput("n",
-                        "Number of observations",
+            sliderInput("bins",
+                        "Number of bins:",
                         min = 1,
-                        max = 1000,
-                        value = 500)
+                        max = 50,
+                        value = 30)
         ),
 
         # Show a plot of the generated distribution
         mainPanel(
-          tabsetPanel(type = "tabs",
-                      "Plot",plotOutput("plot"),
-                      "Summary",textOutput("summary"))
-           
+           plotOutput("distPlot")
         )
     )
 )
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
- d <-reactive({
-   dist<-switch(input$dist,
-                norm=rnorm,
-                unif=runif,
-                lnorm=rlnorm,
-                exp=rexp,
-                rnorm)
-   dist(input$n)
- }) 
 
-  
-    output$plot <- renderPlot({
+    output$distPlot <- renderPlot({
         # generate bins based on input$bins from ui.R
+        x    <- faithful[, 2]
+        bins <- seq(min(x), max(x), length.out = input$bins + 1)
 
         # draw the histogram with the specified number of bins
-        hist(d(), col = 'darkgray', border = 'white',
+        hist(x, breaks = bins, col = 'darkgray', border = 'white',
              xlab = 'Waiting time to next eruption (in mins)',
              main = 'Histogram of waiting times')
     })
