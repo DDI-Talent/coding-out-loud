@@ -35,11 +35,12 @@ ui <- fluidPage(
         # Show a plot of the generated distribution
         mainPanel(
           tabsetPanel(type = "tabs",
-                      "Plot",plotOutput("plot"),
-                      "Summary",textOutput("summary"))
+                      tabPanel("Plot",plotOutput("plot")),
+                      tabPanel("Summary",textOutput("summary"))
            
         )
     )
+  )
 )
 
 # Define server logic required to draw a histogram
@@ -60,10 +61,22 @@ server <- function(input, output) {
 
         # draw the histogram with the specified number of bins
         hist(d(), col = 'darkgray', border = 'white',
-             xlab = 'Waiting time to next eruption (in mins)',
-             main = 'Histogram of waiting times')
+             xlab = 'number',
+             main = 'Distribution')
     })
+    
+    output$summary <- renderPrint(summary(d()))
 }
 
 # Run the application 
 shinyApp(ui = ui, server = server)
+
+
+
+
+
+
+
+
+
+
