@@ -2,6 +2,14 @@
 
 Coding out loud is a way for developers to share their thinking process as they code. It's always valuable to learn how other people think about problem solving and it can be fun too :) 
 
+## Future Events:
+
+### 11am Friday 6th September 2024 - Python Tidy Tuesday
+
+Coming soon
+
+## Past Events:
+
 ### August 2024 - R Shiny app
 - <a href="https://media.ed.ac.uk/media/Coding%20out%20loud%20-%20August%202024_RShiny/1_vreysrd9">Video</a> 
 - <a href="https://github.com/DDI-Talent/coding-out-loud/tree/main/august-2024">Code repo</a> 
