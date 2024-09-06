@@ -1,4 +1,5 @@
 import csv
+import random
 
 # allow user to input a guess, which we then check
 # loop so people can do it until they guess
@@ -10,16 +11,16 @@ import csv
 class Game:
     
     def __init__(self):
-        self.secret = "lucky"
         self.guesses = []
-        self.all_words = ["apple", "grape", "plane", "spark", "light", "stone", "bread", "cloud", "flame", "water"]
+        self.max_guesses = 6
+        self.game_won = False
+        self.all_words = self.load_basic_english_words()
 
     def load_basic_english_words(self):
         with open("xkcd_simple_words.csv") as file:
             reader = csv.reader(file, delimiter=",", quotechar='"')
             data_read = next(reader) 
-            print(data_read)
-#             just keep 5 letter words
+  
             words_to_keep = []
             
             for word in data_read:
@@ -28,6 +29,21 @@ class Game:
             
             return words_to_keep
       
+    def start(self):
+        self.reset_game()
+        
+        while len(self.guesses) < self.max_guesses:
+            guess = input("Make a guess:\n")
+            self.guesses.append(guess)
+            print(self.check_word(guess))
+            
+            if self.secret in self.guesses:
+                break
+            
+    def reset_game(self):
+        self.secret = random.choice(self.all_words)
+        self.guesses = []
+            
     
     def get_feeback(self, guess):
         feedback = ""
