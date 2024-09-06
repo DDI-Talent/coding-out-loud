@@ -1,13 +1,6 @@
 import csv
 import random
 
-# allow user to input a guess, which we then check
-# loop so people can do it until they guess
-# pick random secret from big set
-
-# pick which words are still valid
-# make computer play the game itself
-
 class Game:
     
     def __init__(self):
@@ -29,12 +22,31 @@ class Game:
             
             return words_to_keep
       
+    
+    def play_itself(self, this_many_times = 1):
+        scores = []
+        for which_turn in range(this_many_times):
+            self.reset_game()
+            while True:
+                guess = random.choice(list(self.leftover_words))
+                self.guesses.append(guess)
+                self.words_that_fit_feedback(guess)
+                # print(self.check_word(guess))
+                if self.secret in self.guesses:
+                    print(f"it took you {len(self.guesses)} guesses")
+                    scores.append(len(self.guesses))
+                    break
+        print(f"average score was {sum(scores) / len(scores)}")
+    
+    
+    
     def start(self):
         self.reset_game()
         
         while len(self.guesses) < self.max_guesses:
             guess = input("Make a guess:\n")
             self.guesses.append(guess)
+            self.words_that_fit_feedback(guess)
             print(self.check_word(guess))
             
             if self.secret in self.guesses:
@@ -43,7 +55,38 @@ class Game:
     def reset_game(self):
         self.secret = random.choice(self.all_words)
         self.guesses = []
+        self.leftover_words = self.all_words
             
+    def words_that_fit_feedback(self,guess):
+#         apple
+#         ++---
+        feedback = self.get_feeback(guess)
+        
+        allowed_words_for_feedbacks = []
+        
+        for index in range(0,5):
+            words_that_meet_feedback_item = [] #eg 'A' is at index 0
+            if feedback[index] == "+": # letter is there!
+#               keep words where letter A is at index 0
+                for word in self.leftover_words:
+                    if word[index] == guess[index]: 
+                        words_that_meet_feedback_item.append(word)
+            elif feedback[index] == "-": # letter not there
+#               keep words where letter A is not there at all
+                for word in self.leftover_words:
+                    if not guess[index] in word: 
+                        words_that_meet_feedback_item.append(word)
+            elif feedback[index] == "?": # letter there, but elsewhere
+                for word in self.leftover_words:
+                    if guess[index] in word and word[index] != guess[index]: 
+                        words_that_meet_feedback_item.append(word) 
+                        
+            allowed_words_for_feedbacks.append(words_that_meet_feedback_item)
+            
+            
+        self.leftover_words  = set(allowed_words_for_feedbacks[0]) & set(allowed_words_for_feedbacks[1]) & set(allowed_words_for_feedbacks[2]) & set(allowed_words_for_feedbacks[3]) & set(allowed_words_for_feedbacks[4]  )
+#         eg takes "+--+-" and returns. [word, word , word]
+        
     
     def get_feeback(self, guess):
         feedback = ""
@@ -63,7 +106,10 @@ class Game:
             message = f"Win! You guessed {guess}, the word is {self.secret}"
         else:
             message = f"You guessed {guess}\nfeedback is {feedback}"
+#             "there are still 345 possible valid guesses"
             message += f"\nsecret is   {self.secret}" # TODO: remove this when done
+    
+            message += f"\nleftover words {self.leftover_words}"
             
         return message
             
