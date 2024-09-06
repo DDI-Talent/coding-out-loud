@@ -59,13 +59,16 @@ class Game:
             
             return words_to_keep
     
+    def best_word(self):
+        return random.choice( list(self.leftover_words) )
+        
         
     def auto_play(self):
         scores = []
         for which_go in range(10000):
             self.reset_game()
             while len(self.guesses) < self.max_guesses and not (self.secret in self.guesses):
-                guess = random.choice( list(self.leftover_words) )
+                guess = self.best_word()
                 self.guesses.append(guess)
                 self.words_that_fit_feedback(guess)
                 feedback = self.get_feedback(guess)
