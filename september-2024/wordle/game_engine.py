@@ -12,19 +12,20 @@ class Game:
 
     def reset_game(self):
         self.secret = random.choice(self.all_words)
-        self.guesses = []
-        self.leftover_words = self.all_words
+        self.guesses = [ ]
+        # self.leftover_words = self.all_words
               
     def load_basic_english_words(self):
         with open("xkcd_simple_words.csv") as file:
             reader = csv.reader(file, delimiter=",", quotechar='"')
             data_read = next(reader) #grab first line
-            #    TODO: only keep words 5 letter long         
+            #    TODO: only keep words 5 letter long       
             return data_read
     
     def start(self):
         self.reset_game()
-#         TODO: game goes here!
+        print(self.all_words)
+        
     
 
 
