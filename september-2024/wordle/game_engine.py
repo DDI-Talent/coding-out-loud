@@ -11,10 +11,9 @@ class Game:
         self.all_words = self.load_basic_english_words()
 
     def reset_game(self):
-        self.secret = "apple"
-        # random.choice(self.all_words)
+        self.secret = random.choice(self.all_words)
         self.guesses = []
-        # self.leftover_words = self.all_words
+        self.leftover_words = self.all_words
               
     def load_basic_english_words(self):
         with open("xkcd_simple_words.csv") as file:
