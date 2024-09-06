@@ -4,7 +4,7 @@ Coding out loud is a way for developers to share their thinking process as they 
 
 ## Future Events:
 
-### 11am Friday 6th September 2024 - Python Tidy Tuesday
+### To be confirmed
 
 Coming soon
 
