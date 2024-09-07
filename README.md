@@ -2,11 +2,12 @@
 
 Coding out loud is a way for developers to share their thinking process as they code. It's always valuable to learn how other people think about problem solving and it can be fun too :) 
 
-## Future Events:
+## Future Events (always 1st Monday or each month):
 
-### To be confirmed
+- 4 Oct 2024 10-11am - (join via collaborate link, TBA)
+- 1 Nov 2024 10-11am - (join via collaborate link, TBA)
 
-Coming soon
+
 
 ## Past Events:
 
