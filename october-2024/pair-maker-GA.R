@@ -25,8 +25,12 @@ create_pairs <- function(pool = 1:12, group_size = 2, record = NULL, population 
   number_of_groups <- length(pool) %/% group_size
   group_names <- rep(1:number_of_groups,
                      times = group_size + 1)
-  group_names <- group_names[pool_idx]
-
+  
+  
+  pool_idx <- seq_along(pool)
+  group_names1 <- group_names[pool_idx]
+  group_names2 <- group_names[1:length(pool)]
+  
   winning_dups  <- Inf
   how_many_dups <- Inf
   winning_pairs <- c()
