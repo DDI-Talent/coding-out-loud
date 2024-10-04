@@ -8,7 +8,7 @@ Coding out loud is a way for developers to share their thinking process as they 
 
 ## Past Events:
 
-### November 2024 - Pairing algorithm (R)
+### October 2024 - Pairing algorithm (R)
 - <a href="https://media.ed.ac.uk/media/1_vjm3kopc?kalturaSeekFrom=3&kalturaClipTo=4488">Video</a>
 - <a href="https://github.com/DDI-Talent/coding-out-loud/tree/main/october-2024">Code repo</a>
 
