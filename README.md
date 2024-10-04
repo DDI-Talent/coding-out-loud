@@ -4,12 +4,13 @@ Coding out loud is a way for developers to share their thinking process as they 
 
 ## Future Events (always 1st Friday of each month):
 
-- 4 Oct 2024 10-11am - (join via collaborate link, TBA)
 - 1 Nov 2024 10-11am - (join via collaborate link, TBA)
 
-
-
 ## Past Events:
+
+### November 2024 - Pairing algorithm (R)
+- <a href="https://media.ed.ac.uk/media/1_vjm3kopc?kalturaSeekFrom=3&kalturaClipTo=4488">Video</a>
+- <a href="https://github.com/DDI-Talent/coding-out-loud/tree/main/october-2024">Code repo</a>
 
 ### September 2024 - Wordle in Python
 - <a href="https://media.ed.ac.uk/media/Coding+out+loud+-+Wordle+in+Python/1_gmth6xr0">Video</a>
