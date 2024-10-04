@@ -28,8 +28,8 @@ create_pairs <- function(pool = 1:12, group_size = 2, record = NULL, population 
   
   
   pool_idx <- seq_along(pool)
-  group_names1 <- group_names[pool_idx]
-  group_names2 <- group_names[1:length(pool)]
+  group_names <- group_names[pool_idx]
+  group_names <- group_names[1:length(pool)]
   
   winning_dups  <- Inf
   how_many_dups <- Inf
@@ -69,7 +69,7 @@ create_pairs(LETTERS[1:num_students],
 ## loop for n_weeks weeks
 record <- NULL
 num_students <- 5
-n_weeks <- 8
+n_weeks <- 20
 for (i in 1:n_weeks){
   print_week(i)
   record <- create_pairs(LETTERS[1:num_students],
