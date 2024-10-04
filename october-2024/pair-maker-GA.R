@@ -7,9 +7,14 @@ GET NEW SET OF PAIRS\n')
 }
 
 
+# Collapse pairs into single string
+sort_and_combine <- function(pair) {
+  paste(sort(pair), collapse = '-')
+}
+
 # Extract the "cost" or "fitness" of the group
 fitness_function <- function(pairs, record) {
-  pairs_strings <- sapply(pairs, \(pair) paste(sort(pair), collapse = '-'))
+  pairs_strings <- sapply(pairs, sort_and_combine)
   sum(pairs_strings %in% unlist(record))
 }
 
@@ -25,7 +30,7 @@ create_pairs <- function(pool = 1:12, group_size = 2, record = NULL, population 
   winning_dups  <- Inf
   how_many_dups <- Inf
   winning_pairs <- c()
-
+  i <- 0
   # the real work happens here
   while (i < population && how_many_dups > 0) {
     i <- i + 1
@@ -35,7 +40,7 @@ create_pairs <- function(pool = 1:12, group_size = 2, record = NULL, population 
 
     if (how_many_dups <= winning_dups) {
       winning_dups  <- how_many_dups
-      winning_pairs <- sapply(pairs, \(pair) paste(sort(pair), collapse = '-'))
+      winning_pairs <- sapply(pairs, sort_and_combine)
 
       cat("NEW WINNER: Attempt", i, "had\n   ", winning_dups, 'duplicates\n\n')
       cat('WINNING PAIRS', winning_pairs, '\n', sep = '\n\t')
