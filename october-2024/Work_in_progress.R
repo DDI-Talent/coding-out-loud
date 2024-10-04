@@ -14,7 +14,7 @@ create_pairs <- function( students_pool, group_size, record = NULL){
   sum(final_groups %in% record)
   
   # this is the old record, with the new pairs added to it
-  list(record, final_groups)
+  c(record, list(final_groups))
 }
 
 record <- create_pairs(students_pool = LETTERS[1:7],
