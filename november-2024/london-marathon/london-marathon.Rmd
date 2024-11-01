@@ -1,0 +1,70 @@
+---
+title: "London Marathon"
+author: "Keith Douglas"
+date: "2024-10-30"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load-libraries}
+library(tidyverse)
+```
+
+
+```{r load-data}
+winners <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-04-25/winners.csv')
+```
+
+```{r}
+# Some years had 0 winners for some categories
+winners <- winners %>% 
+  filter(!Year %in% c(1981, 1982, 2022))
+
+# Explore unique winners per country
+unique_winners_per_country <- winners %>% 
+  select(Nationality, Athlete) %>% 
+  group_by(Nationality) %>% 
+  unique() %>% 
+  arrange(Nationality)
+
+unique_winners_per_country
+
+winners_summary <- winners %>% 
+  group_by(Nationality) %>% 
+  count() %>% 
+  arrange(-n)
+```
+
+```{r}
+winners <- winners %>% 
+  left_join(winners_summary, by = "Nationality")
+```
+
+```{r bubble-plot}
+# add a variable to size the bubbles
+winners <- winners %>% 
+  mutate(time_numeric = as.numeric(Time))
+
+winners %>% 
+  ggplot(aes(x = Year, y = reorder(Nationality, n), colour = Category)) +
+  geom_jitter(aes(size = time_numeric, colour = Category),
+    alpha = 0.6,
+    height = 0.1,
+    width = 0.1,
+    stroke = 1
+  ) + 
+  labs(
+    x = "Year",
+    y = "Country of Origin",
+    title = "London Marathon no. of winners by category, year and nationality") +
+  scale_colour_manual(
+    values = c("black", "purple", "orange", "ivory")) +
+  scale_x_continuous(
+    breaks = seq(min(winners$Year), 
+                 max(winners$Year), by = 2 )) +
+  theme_dark()
+```
+
