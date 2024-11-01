@@ -4,9 +4,13 @@ Coding out loud is a way for developers to share their thinking process as they 
 
 ## Future Events (always 1st Friday of each month):
 
-- 1 Nov 2024 10-11am UK time - (join via collaborate link, <a href="https://eu.bbcollab.com/guest/fd02d6277d92496b8d7474cb1c4b266e">https://eu.bbcollab.com/guest/fd02d6277d92496b8d7474cb1c4b266e</a>)
+- 6 Dec 2024 10-11am UK time - (join via collaborate link, TBA)
 
 ## Past Events:
+
+### November 2024 - London marathon winners (R)
+- <a href="https://media.ed.ac.uk/media/Coding%20out%20loud%20-%20London%20marathon%20winners/1_eybvfhfz">Video</a>
+- <a href="https://github.com/DDI-Talent/coding-out-loud/tree/main/november-2024">Code repo</a>
 
 ### October 2024 - Pairing algorithm (R)
 - <a href="https://media.ed.ac.uk/media/1_vjm3kopc?kalturaSeekFrom=3&kalturaClipTo=4488">Video</a>
