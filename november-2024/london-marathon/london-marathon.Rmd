@@ -32,6 +32,7 @@ unique_winners_per_country <- winners %>%
 
 unique_winners_per_country
 
+# -n is the same as desc()
 winners_summary <- winners %>% 
   group_by(Nationality) %>% 
   count() %>% 
