@@ -15,10 +15,17 @@ tree_data <- data.frame(
 )
 
 # Define colors for the polygons
-colors <- c("darkgreen", "darkgreen", "darkgreen", "brown")
+colors <- c("darkgreen", "forestgreen", "darkgreen", "brown")
 
 # Plot the tree
 ggplot(tree_data, aes(x = x, y = y, group = group)) +
+  theme_void() +
+  theme(
+    plot.background = element_rect(
+      fill = "midnightblue"
+    ),
+    legend.position = "none"
+  ) +
   geom_polygon(aes(fill = factor(group))) +
   scale_fill_manual(values = colors) +
   # Add ornaments (random points on the tree)
@@ -33,12 +40,6 @@ ggplot(tree_data, aes(x = x, y = y, group = group)) +
   ) +
   # Add a star at the top
   geom_point(aes(x = 3, y = 8), shape = 8, color = "yellow", size = 5, inherit.aes = FALSE) +
-  coord_fixed() +
-  theme_void() +
-  theme(
-    plot.background = element_rect(
-      fill = "midnightblue"
-    ),
-    legend.position = "none"
-  ) 
+  coord_fixed()
+
 
