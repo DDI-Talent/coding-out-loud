@@ -3,42 +3,31 @@ library(ggplot2)
 
 # Create the tree data (three triangles for the tree and one rectangle for the trunk)
 tree_data <- data.frame(
-  x <-  c(0.5, 3, 5.5,   # Bottom triangle
-          1, 3, 5,   # Middle triangle
-          1.7, 3, 4.2,   # Top triangle
-          2.5, 2.5, 3.5, 3.5), # Trunk
-  y <-  c(2, 5, 2,   # Bottom triangle
-          3.5, 6, 3.5,   # Middle triangle
-          5, 8, 5,   # Top triangle
-          1, 2, 2, 1), # Trunk
-  group <-  c(rep(1, 3), rep(2, 3), rep(3, 3), rep(4, 4)) # Grouping for each polygon
+  x = c(1.5, 2.5, 2, # Triangle 1 vertices
+        1.5, 2.5, 2, # Triangle 2 vertices
+        1.7, 2.3, 2, # Triangle 3 vertices
+        1.7, 2.3, 2, 1 # Trunk vertices
+      ),
+  y = c(0, 0, 1,       # Triangle 1 vertices
+        0.5, 0.5, 1.5, # Triangle 2 vertices
+        1.2, 1.2, 2, # Triangle 3 vertices
+        1.7, 2.3, 2, 1 # Trunk vertices
+        ),
+  group = c(1, 1, 1, # Group for Triangle 1
+            2, 2, 2, # Group for Triangle 2
+            3, 3, 3,  # Group for Triangle 3
+            4, 4, 4, 4  # Group for Triangle 3
+            )  
 )
 
-# Define colors for the polygons
-colors <- c("darkgreen", "darkgreen", "darkgreen", "brown")
 
-# Plot the tree
+# Plot the triangle
 ggplot(tree_data, aes(x = x, y = y, group = group)) +
-  geom_polygon(aes(fill = factor(group))) +
-  scale_fill_manual(values = colors) +
-  # Add ornaments (random points on the tree)
-  geom_point(
-    data = data.frame(
-      x = runif(20, 2, 4),
-      y = runif(20, 2, 7)
-    ),
-    aes(x = x, y = y), 
-    inherit.aes = FALSE, # Prevent inheriting the global aes()
-    color = "red", size = 3
-  ) +
-  # Add a star at the top
-  geom_point(aes(x = 3, y = 8), shape = 8, color = "yellow", size = 5, inherit.aes = FALSE) +
-  coord_fixed() +
+  geom_polygon(aes(fill = factor(group)), color = "black") +  # Fill and outline color
+  scale_fill_manual(values = c("forestgreen", "darkgreen", "darkgreen", "brown4")) +
+  coord_fixed() + # Ensures the x and y axes are scaled equally, keeping the triangle proportions correct.
   theme_void() +
   theme(
-    plot.background = element_rect(
-      fill = "midnightblue"
-    ),
     legend.position = "none"
-  ) 
+  )
 
