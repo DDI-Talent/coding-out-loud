@@ -26,6 +26,7 @@ ggplot(tree_data, aes(x = x, y = y, group = group)) +
   geom_polygon(aes(fill = factor(group)), color = "black") +  # Fill and outline color
   scale_fill_manual(values = c("forestgreen", "darkgreen", "forestgreen", "grey98")) +
   theme_void() +
+  coord_fixed() +
   theme(
     legend.position = "none",
     plot.background = element_rect(
