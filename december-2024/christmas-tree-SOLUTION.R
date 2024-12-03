@@ -21,6 +21,7 @@ tree_data <- data.frame(
             )  
 )
 
+# https://realworlddatascience.net/ideas/tutorials/posts/2023/12/12/xmas-cards.html
 set.seed(20231225)
 n <- 100
 
@@ -32,6 +33,7 @@ snowflakes <- data.frame(
 
 # Plot the triangle
 ggplot(tree_data, aes(x = x, y = y, group = group)) +
+  
   geom_polygon(aes(fill = factor(group)), color = "black") +  # Fill and outline color
   scale_fill_manual(values = c("forestgreen", "darkgreen", "forestgreen", "grey98")) +
   
@@ -41,7 +43,7 @@ ggplot(tree_data, aes(x = x, y = y, group = group)) +
   # Add a bauble at the top
   geom_point(aes(x = 2, y = 2), shape = 16, color = "tomato2", size = 5, inherit.aes = FALSE) +
   
-  
+  # Add snowflakes
   geom_point(
     data = snowflakes,
     mapping = aes(
@@ -62,7 +64,6 @@ ggplot(tree_data, aes(x = x, y = y, group = group)) +
     plot.title = element_text(color = "grey98", size = 32, hjust = 0.5, vjust = -2, family = "serif")
   ) +
   labs(
-    title = "Merry Christmas",
-    
+    title = "Merry Christmas"
   )
 
