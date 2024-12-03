@@ -6,17 +6,17 @@ tree_data <- data.frame(
   x = c(1.5, 3, 2, # Triangle 1 
         1.5, 3, 2, # Triangle 2 
         1.5, 3, 2, # Top 
-        0, 0, 3, 3 # Trunk 
+        0, 0, 3, 3 # Ground 
       ),
   y = c(0, 0, 1,       # Triangle 1 
         0.5, 0.5, 1.5, # Triangle 2 
         1.1, 1.1, 2, # Top 
-        0, 0.2, 0.2, 0 # Trunk 
+        0, 0.2, 0.2, 0 # Ground 
         ),
   group = c(1, 1, 1, # Group for Triangle 1
             2, 2, 2, # Group for Triangle 2
             3, 3, 3,  # Group for Triangle 3
-            4, 4, 4, 4  # Group for Trunk
+            4, 4, 4, 4  # Group for Ground
             )  
 )
 
