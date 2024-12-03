@@ -3,6 +3,7 @@ library(ggplot2)
 
 # Create the tree data (three triangles for the tree and one rectangle for the ground)
 tree_data <- data.frame(
+  # left point, right point, top point
   x = c(1.5, 2.5, 2, # Bottom 
         1.5, 2.5, 2, # Middle
         1.5, 2.5, 2, # Top 
@@ -58,7 +59,7 @@ ggplot(tree_data, aes(x = x, y = y, group = group)) +
     plot.background = element_rect(
       fill = "midnightblue"
     ),
-    plot.title = element_text(color = "grey98", size = 16, hjust = 0.5, vjust = 0.5)
+    plot.title = element_text(color = "grey98", size = 32, hjust = 0.5, vjust = -2, family = "serif")
   ) +
   labs(
     title = "Merry Christmas",
