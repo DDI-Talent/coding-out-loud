@@ -22,9 +22,11 @@ tree_data <- data.frame(
 )
 
 # https://realworlddatascience.net/ideas/tutorials/posts/2023/12/12/xmas-cards.html
-set.seed(20231225)
+set.seed(20241225)
 n <- 100
 
+
+# generates n random numbers drawn from a uniform distribution with a minimum value of 0 and a maximum value of 3
 snowflakes <- data.frame(
   x = runif(n, 0, 3),
   y = runif(n, 0, 3)
