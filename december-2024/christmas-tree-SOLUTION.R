@@ -33,7 +33,7 @@ snowflakes <- data.frame(
 )
 
 
-# Plot the triangle
+# Plot the triangles
 ggplot(tree_data, aes(x = x, y = y, group = group)) +
   
   geom_polygon(aes(fill = factor(group)), color = "black") +  # Fill and outline color
@@ -57,6 +57,8 @@ ggplot(tree_data, aes(x = x, y = y, group = group)) +
     pch = 8,
     inherit.aes = FALSE
   ) +
+  
+  # 
   theme_void() +
   theme(
     legend.position = "none",
