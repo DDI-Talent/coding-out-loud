@@ -32,6 +32,7 @@ ggplot(tree_data, aes(x = x, y = y)) +
   labs(
      title = "Merry Christmas"
   ) +
+  
   # Add a star
   geom_point(aes(x = 0.5, y = 2), 
              shape = 8, 
