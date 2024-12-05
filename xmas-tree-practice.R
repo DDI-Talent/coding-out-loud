@@ -34,18 +34,24 @@ ggplot(tree_data, aes(x = x, y = y)) +
   ) +
   
   # Add a star
-  geom_point(aes(x = 0.5, y = 2), 
+  geom_point(data = data.frame(
+                    x = 0.5,
+                    y = 2
+                  ), 
+             aes(x = x, y = y), 
              shape = 8, 
              color = "yellow", 
-             size = 5, 
-             inherit.aes = FALSE) +
+             size = 5) +
   
   # Add a bauble at the top
-  geom_point(aes(x = 2, y = 1), 
+  geom_point(data = data.frame(
+                    x = 2,
+                    y = 1
+                  ),
+             aes(x = x, y = y), 
              shape = 16, 
              color = "tomato2", 
-             size = 5, 
-             inherit.aes = FALSE) +
+             size = 5) +
   
   # Add snowflakes
   geom_point(

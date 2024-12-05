@@ -40,10 +40,27 @@ ggplot(tree_data, aes(x = x, y = y, group = group)) +
   scale_fill_manual(values = c("forestgreen", "darkgreen", "forestgreen", "grey98")) +
   
   # Add a star
-  geom_point(aes(x = 0.5, y = 2.5), shape = 8, color = "yellow", size = 5, inherit.aes = FALSE) +
+  geom_point(data = data.frame(
+                    x = 1,
+                    y = 2.5
+                  ), 
+    aes(x = x, y = y), 
+    shape = 8, 
+    color = "yellow", 
+    size = 5,
+    inherit.aes = FALSE) +
+  
   
   # Add a bauble at the top
-  geom_point(aes(x = 2, y = 2), shape = 16, color = "tomato2", size = 5, inherit.aes = FALSE) +
+  geom_point(data = data.frame(
+                    x = 2,
+                    y = 2
+                  ),
+    aes(x = x, y = y), 
+    shape = 16, 
+    color = "tomato2", 
+    size = 5,
+    inherit.aes = FALSE) +
   
   # Add snowflakes
   geom_point(
@@ -65,7 +82,7 @@ ggplot(tree_data, aes(x = x, y = y, group = group)) +
     plot.background = element_rect(
       fill = "midnightblue"
     ),
-    plot.title = element_text(color = "grey98", size = 32, hjust = 0.5, vjust = -2, family = "serif")
+    plot.title = element_text(color = "yellow", size = 32, hjust = 0.5, vjust = -1, family = "serif")
   ) +
   labs(
     title = "Merry Christmas"
