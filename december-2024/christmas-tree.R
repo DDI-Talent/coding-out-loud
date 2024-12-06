@@ -14,19 +14,31 @@ tree_data <- data.frame(
 set.seed(20241225)
 n <- 100
 
-x = runif(n, 0, 3)
 
 snowflakes <- data.frame(
   x = runif(n, 1, 3),
   y = runif(n, 0, 1.5)
 )
 
+
+make_bouble <- function(x_bouble, y_bouble, color_bouble = "red"){
+  geom_point(
+    data = data.frame(
+      x = x_bouble,
+      y = y_bouble
+    ), 
+    aes(x = x, y = y),
+    colour = color_bouble,
+    size = 13
+  )
+}
+
 ggplot(tree_data, aes(x = x_pos, y = y_pos)) +
   geom_polygon(fill = "forestgreen") +
-  #theme_void() +
+  theme_void() +
   theme(
     plot.background = element_rect(
-      # fill = "midnightblue"
+      fill = "midnightblue"
     ), 
     plot.title = element_text(
       colour = "gold",
@@ -49,16 +61,13 @@ ggplot(tree_data, aes(x = x_pos, y = y_pos)) +
     ) +
   
   # add bauble
-  geom_point(
-    data = data.frame(
-      x = 2,
-      y = 1
-    ), 
-    aes(x = x, y = y),
-    colour = "tomato",
-    size = 6
-  ) +
+  make_bouble( 2,1) + 
+  make_bouble( 2,0.6,"grey98") + 
+  make_bouble( 1.7,0.2,"violet") + 
+  make_bouble( 2.3,0.3,"pink") + 
+  make_bouble( 2, 0.6,"goldenrod") + 
   
+
   # add star
   geom_point(
     data = data.frame(
