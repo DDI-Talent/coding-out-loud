@@ -9,7 +9,7 @@ Coding out loud is a way for developers to share their thinking process as they 
 ## Past Events:
 
 ### Decemeber 2024 - Christmas Tree (R)
-- <a href="https://media.ed.ac.uk/media/t/1_uqy2wcbx">Video</a>
+- <a href="https://media.ed.ac.uk/media/Coding+out+loud+-+December+2024+-+Making+a+Christmas+Card+with+ggplot/1_uqy2wcbx">Video</a>
 - <a href="https://github.com/DDI-Talent/coding-out-loud/tree/main/december-2024">Code repo</a>
 - Attribution: We used <a href="https://realworlddatascience.net/ideas/tutorials/posts/2023/12/12/xmas-cards.html">this tutorial</a> to learn how to create Christmas card with ggplot 
 
