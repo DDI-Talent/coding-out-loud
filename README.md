@@ -4,7 +4,7 @@ Coding out loud is a way for developers to share their thinking process as they 
 
 ## Future Events (always 1st Friday of each month):
 
-- 7th Feb 2025 10-11am UK time - (join via collaborate link TBC)
+- 7th Feb 2025 11-12am UK time - (join via collaborate link TBC)
 
 ## Past Events:
 
