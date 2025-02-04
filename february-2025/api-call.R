@@ -12,10 +12,30 @@ req_users <- request(base_url) |>
   req_url_path_append(resource) |>
   req_headers(Accept = 'application/json')
 
-
 resp_users <- req_perform(req_users)
 
-users_df <- resp_body_json(resp_users, simplifyVector = TRUE)$users
+#####################################################################
+# Get data as a list
+
+users_list <- resp_body_json(resp_users, simplifyVector = FALSE)
+names(users)
+
+users_list$total
+users_list$skip
+users_list$limit
+
+users_list$users |> View()
+
+#####################################################################
+# Get data as a df
+
+users_df <- resp_body_json(resp_users, simplifyVector = TRUE)
+
+users_df$total
+users_df$skip
+users_df$limit
+
+users_df$users |> View()
 
 #####################################################################
 
