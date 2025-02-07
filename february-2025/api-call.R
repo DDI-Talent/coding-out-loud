@@ -17,7 +17,7 @@ resp_users <- req_perform(req_users)
 #####################################################################
 # Get data as a list
 
-users_list <- resp_body_json(resp_users, simplifyVector = FALSE)
+users_list <- resp_body_json(resp_users)
 names(users)
 
 users_list$total
