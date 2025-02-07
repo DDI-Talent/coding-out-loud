@@ -4,7 +4,7 @@ Coding out loud is a way for developers to share their thinking process as they 
 
 ## Future Events (always 1st Friday of each month):
 
-- 7th March 2025 11-12am UK time - (join via <a href="">this collaborate link</a>)
+- 7th March 2025 11-12am UK time - (join via <a href="https://eu.bbcollab.com/guest/2937ba323b5f4c138449bd2c8e264904">this collaborate link</a>)
 
 ## Past Events:
 
