@@ -1,0 +1,122 @@
+```{r}
+library(httr2)
+library(dplyr)
+```
+
+```{r}
+?httr2
+```
+
+code == "client"
+
+1. Creat a request object with any paraphanalia
+
+## Create a request
+
+Get the url from the docs!
+
+```{r}
+req_users <- request('https://dummyjson.com/')
+```
+
+`body` can add content to send to the api
+but that would be `POST` request
+We are going to make a `GET` request
+Our client is request to "get" stuff.
+
+## Append user
+
+
+```{r}
+req_users <- request('https://dummyjson.com/') |> 
+  req_url_path_append('users')
+
+```
+
+
+## Add header
+
+Like "meta-data" for request
+Adds extra instructions for the server
+
+Here we say what type of data we want
+
+```{r}
+req_users <- request('https://dummyjson.com/') |> 
+  req_url_path_append('users') |> 
+  req_headers(Accept = 'application/json')
+
+```
+
+
+## A dry run?
+
+User agent == "what type of clien"
+
+Curl == underlying function used by httr2
+
+```{r}
+req_users |> 
+  req_dry_run()
+```
+
+## Lets perform
+
+```{r}
+req_users <- request('https://dummyjson.com/') |> 
+  req_url_path_append('users') |> 
+  req_headers(Accept = 'application/json')
+
+resp_users <- req_perform(req_users)
+resp_users
+```
+200 OK - server says "Yes"
+404    -> sever syas "No" - page not found - probably our fault
+500    -> the server has a problem - not our fault
+
+
+## Get our data out
+
+```{r}
+users_list <- resp_body_json(resp_users)
+users_list
+names(users_list)
+
+users_list[['users']]
+users_list$users[3]
+users_list$users[[3]]
+
+```
+
+```{r}
+users_df <- resp_body_json(resp_users,
+                           simplifyVector = TRUE)
+users_df
+
+```
+
+## Lets use usual TV suspects
+
+```{r}
+users_df <- users_df$users
+
+users_by_blood_group <- users_df |> 
+  group_by(bloodGroup) |> 
+  summarize(count = n()) |> 
+  arrange(desc(count))
+
+users_by_blood_group
+```
+
+## JSON data
+
+Javacript Object Notation
+
+Lightweight, plaintext, JS 
+
+
+Server sent us JSON data
+`rep_body_json()` takes that and converts into R flavour
+
+JS uses camel case by convention
+
