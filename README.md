@@ -4,11 +4,15 @@ Coding out loud is a way for developers to share their thinking process as they 
 
 ## Future Events (always 1st Friday of each month):
 
-- 7th Feb 2025 11-12am UK time - (join via <a href="https://eu.bbcollab.com/guest/2192291e4a844c0c98a5ae77df7a78b7">this collaborate link</a>)
+- 7th March 2025 11-12am UK time - (join via <a href="">this collaborate link</a>)
 
 ## Past Events:
 
-### Decemeber 2024 - Christmas Tree (R)
+### February 2025 - API calls in R
+- <a href="https://media.ed.ac.uk/media/Coding+out+loud+-+February+2025/1_alyhgyff">Video</a>
+- <a href="https://github.com/DDI-Talent/coding-out-loud/tree/main/february-2025">Code repo</a>
+
+### December 2024 - Christmas Tree (R)
 - <a href="https://media.ed.ac.uk/media/Coding+out+loud+-+December+2024+-+Making+a+Christmas+Card+with+ggplot/1_uqy2wcbx">Video</a>
 - <a href="https://github.com/DDI-Talent/coding-out-loud/tree/main/december-2024">Code repo</a>
 - Attribution: We used <a href="https://realworlddatascience.net/ideas/tutorials/posts/2023/12/12/xmas-cards.html">this tutorial</a> to learn how to create Christmas card with ggplot 
