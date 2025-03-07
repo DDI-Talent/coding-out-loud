@@ -4,9 +4,13 @@ Coding out loud is a way for developers to share their thinking process as they 
 
 ## Future Events (always 1st Friday of each month):
 
-- 7th March 2025 11-12am UK time - (join via <a href="https://eu.bbcollab.com/guest/2937ba323b5f4c138449bd2c8e264904">this collaborate link</a>)
+- Friday 4th April 2025 11-12am UK time - (join via <a href="https://eu.bbcollab.com/guest/2937ba323b5f4c138449bd2c8e264904">this collaborate link</a>)
 
 ## Past Events:
+
+### March 2025 - API calls in Python: Airline Departures Board
+- <a href="">Video</a>
+- <a href="https://github.com/DDI-Talent/coding-out-loud/tree/main/march-2025">Code repo</a>
 
 ### February 2025 - API calls in R
 - <a href="https://media.ed.ac.uk/media/Coding+out+loud+-+February+2025/1_alyhgyff">Video</a>
