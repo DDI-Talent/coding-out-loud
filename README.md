@@ -9,7 +9,7 @@ Coding out loud is a way for developers to share their thinking process as they 
 ## Past Events:
 
 ### March 2025 - API calls in Python: Airline Departures Board
-- <a href="">Video</a>
+- <a href="https://media.ed.ac.uk/media/Coding+out+loud+March+2025+Airport+Departures+Board/1_ijq4tfa9">Video</a>
 - <a href="https://github.com/DDI-Talent/coding-out-loud/tree/main/march-2025">Code repo</a>
 
 ### February 2025 - API calls in R
