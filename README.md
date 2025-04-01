@@ -2,10 +2,6 @@
 
 Coding out loud is a way for developers to share their thinking process as they code. It's always valuable to learn how other people think about problem solving and it can be fun too :) 
 
-## Future Events (always 1st Friday of each month):
-
-- Friday 4th April 2025 11-12am UK time - (join via <a href="https://eu.bbcollab.com/guest/2937ba323b5f4c138449bd2c8e264904">this collaborate link</a>)
-
 ## Past Events:
 
 ### March 2025 - API calls in Python: Airline Departures Board
