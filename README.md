@@ -2,6 +2,8 @@
 
 Coding out loud is a way for developers to share their thinking process as they code. It's always valuable to learn how other people think about problem solving and it can be fun too :) 
 
+We are currently on a break but past events are listed below.
+
 ## Past Events:
 
 ### March 2025 - API calls in Python: Airline Departures Board
